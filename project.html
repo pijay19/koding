@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MAHASISWA POLITANI</h1>
+    <table border="5">
+        <tr>
+            <td>ID</td>
+            <td>NIM</td>
+            <td>NAMA</td>
+            <td>PRODI</td>
+        </tr>
+        @foreach ($data_mahasiswa as $item)
+            <tr>
+                <td> {{$item->id}} </td>
+                <td> {{$item->nim}} </td>
+                <td> {{$item->nama}} </td>
+                 <td> <a href=" {{route('mhs.show',$item->id_prodi)}} ">{{$item->Mahasiswa->nama_prodi}}</a> </td>
+            </tr>
+        @endforeach
+    </table>
+</body>
+</html>
